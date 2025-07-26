@@ -1,0 +1,97 @@
+x-user: &user ${NIFI_USR}
+x-pwd: &pwd ${NIFI_PWD}
+
+x-nifi-base: &nifi-base
+  image: apache/nifi:2.5.0
+  networks:
+    - nifi
+
+x-nifi-toolkit-base: &nifi-toolkit-base
+  image: apache/nifi-toolkit
+  networks:
+    - nifi
+
+x-nifi-environment: &nifi-environment
+  NIFI_WEB_HTTPS_PORT: 8443
+  # NIFI_CLUSTER_IS_NODE: "true"
+  # NIFI_ZK_CONNECT_STRING: "zookeeper:2181"
+  # NIFI_ELECTION_MAX_WAIT: "30 sec"
+  # NIFI_ELECTION_MAX_CANDIDATES: 1
+  # NIFI_SENSITIVE_PROPS_KEY: "my-random-string"
+  # NIFI_CLUSTER_NODE_PROTOCOL_PORT: 8082
+  # NIFI_WEB_PROXY_HOST: "nifi0:8443,nifi0,nifi1:8443,nifi1,localhost:8080"
+  SINGLE_USER_CREDENTIALS_USERNAME: *user
+  SINGLE_USER_CREDENTIALS_PASSWORD: *pwd
+  NIFI_WEB_HTTPS_HOST: 0.0.0.0
+  NIFI_REMOTE_INPUT_HOST: 0.0.0.0
+  NIFI_SECURITY_USER_AUTHORIZER: "single-user-authorizer"
+  NIFI_SECURITY_USER_LOGIN_IDENTITY_PROVIDER: "single-user-provider"
+  INITIAL_ADMIN_IDENTITY: *user
+  AUTH: "tls"
+  KEYSTORE_TYPE: "JKS"
+  KEYSTORE_PASSWORD: keystorepass
+  TRUSTSTORE_TYPE: "JKS"
+  TRUSTSTORE_PASSWORD: keystorepass
+
+x-nifi01-environment: &nifi01-environment
+  NIFI_CLUSTER_ADDRESS: "nifi01"
+  NIFI_WEB_HTTPS_HOST: "nifi01"
+  KEYSTORE_PATH: "/opt/nifi/certs/keystore.jks"
+  TRUSTSTORE_PATH: "/opt/nifi/certs/truststore.jks"
+
+# x-nifi02-environment: &nifi02-environment
+#   NIFI_CLUSTER_ADDRESS: "nifi02"
+#   NIFI_WEB_HTTPS_HOST: "nifi02"
+#   # KEYSTORE_PATH: "/opt/certs/nifi02/keystore.jks"
+#   # TRUSTSTORE_PATH: "/opt/certs/nifi02/truststore.jks"
+
+services:
+  nifi-01:
+    <<: *nifi-base
+    container_name: nifi01
+    restart: on-failure
+    ports:
+      - "8443:8443"
+    environment:
+      <<: [*nifi-environment, *nifi01-environment]
+    # entrypoint: ["/entrypoint.sh"]
+    networks:
+      - nifi
+    volumes:
+      - ./nifi/certs:/opt/nifi/certs
+      - ./nifi/libs:/opt/nifi/nifi-current/libs      
+      - ./nifi/data/01/conf:/opt/nifi/nifi-current/conf
+      - ./nifi/data/01/extensions:/opt/nifi/nifi-current/extensions
+      - ./nifi/data/01/database_repository:/opt/nifi/nifi-current/database_repository
+      - ./nifi/data/01/flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+      - ./nifi/data/01/content_repository:/opt/nifi/nifi-current/content_repository
+      - ./nifi/data/01/provenance_repository:/opt/nifi/nifi-current/provenance_repository
+      - ./nifi/data/01/state:/opt/nifi/nifi-current/state
+      - ./nifi/data/01/logs:/opt/nifi/nifi-current/logs
+    # secrets:
+    #   - nifi_secret
+    
+  postgres.persistence:
+    image: postgres:latest
+    restart: always
+    mem_limit: 512m
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=sdot_db
+      - POSTGRES_USER=${POSTGRES_USR}
+      - POSTGRES_PASSWORD=${POSTGRES_PWD}
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USR}"]
+      interval: 5s
+      timeout: 2s
+      retries: 60
+    networks:
+      - nifi
+    volumes:
+      - ./postgresql/initdb:/docker-entrypoint-initdb.d
+      - ./postgresql/data:/var/lib/postgresql/data
+
+networks:
+  nifi:
+    driver: bridge
