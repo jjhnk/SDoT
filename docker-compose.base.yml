@@ -1,0 +1,46 @@
+services:
+  zookeeper:
+    container_name: zookeeper
+    image: bitnami/zookeeper:3.9.0
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    networks:
+      - shared_net
+
+  proxy:
+    image: nginx:latest
+    container_name: proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8443:8443"
+    networks:
+      - shared_net
+    depends_on:
+      - nifi01
+      - nifi02
+
+  postgres.persistence:
+    image: postgres:latest
+    restart: always
+    mem_limit: 512m
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=sdot_db
+      - POSTGRES_USER=${POSTGRES_USR}
+      - POSTGRES_PASSWORD=${POSTGRES_PWD}
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USR}"]
+      interval: 5s
+      timeout: 2s
+      retries: 60
+    networks:
+      - shared_net
+    volumes:
+      - ./postgresql/initdb:/docker-entrypoint-initdb.d
+      - ./postgresql/data:/var/lib/postgresql/data
+
+networks:
+  shared_net:
+    driver: bridge

@@ -1,0 +1,43 @@
+x-hadoop-base: &hadoop_base
+  image: apache/hadoop:3.4
+
+services:
+  hdfs-namenode:
+    <<: *hadoop_base
+    container_name: namenode
+    hostname: namenode
+    command: ["hdfs", "namenode"]
+    ports:
+      - 9870:9870
+    env_file:
+      - ./hadoop/config
+    environment:
+      ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
+    # volumes:
+    #   - ./hadoop/namenode:/opt/hadoop/data/nameNode
+    #   - ./hadoop/config:/opt/hadoop/etc/hadoop
+    #   - ./start-hdfs.sh:/start-hdfs.sh
+    networks:
+      - nifi
+  
+  datanode:
+    <<: *hadoop_base
+    command: ["hdfs", "datanode"]
+    env_file:
+      - ./config      
+
+  resourcemanager:
+    <<: *hadoop_base
+    hostname: resourcemanager
+    command: ["yarn", "resourcemanager"]
+    ports:
+        - 8088:8088
+    env_file:
+      - ./config
+
+  nodemanager:
+    <<: *hadoop_base
+    command: ["yarn", "nodemanager"]
+    env_file:
+      - ./config
+        
