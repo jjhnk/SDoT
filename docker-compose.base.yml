@@ -13,6 +13,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
+      - "8080:8080"
       - "8443:8443"
     networks:
       - shared_net
@@ -40,6 +41,7 @@ services:
     volumes:
       - ./postgresql/initdb:/docker-entrypoint-initdb.d
       - ./postgresql/data:/var/lib/postgresql/data
+    
 
 networks:
   shared_net:

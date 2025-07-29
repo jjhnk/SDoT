@@ -62,8 +62,7 @@ services:
 
   nifi-registry:
     <<: *nifi-registry-base
-    ports:
-      - "18080:18080"
+    container_name: nifi-registry
     environment:
       - NIFI_REGISTRY_WEB_HTTP_PORT=18080
       - NIFI_REGISTRY_DB_DIR=/opt/nifi-registry/nifi-registry-current/database
