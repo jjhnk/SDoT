@@ -11,32 +11,33 @@ x-nifi-registry-base: &nifi-registry-base
   networks:
     - shared_net
 
-x-nifi-base: &nifi-base
+x-nifi-common:
+  &nifi-common
   image: apache/nifi:2.5.0
   networks:
     - shared_net
-
-x-nifi-environment: &nifi-environment
-  NIFI_WEB_HTTPS_PORT: 8443
-  NIFI_CLUSTER_IS_NODE: "true"
-  NIFI_ZK_CONNECT_STRING: "zookeeper:2181"
-  NIFI_ELECTION_MAX_WAIT: "30 sec"
-  NIFI_ELECTION_MAX_CANDIDATES: 1
-  NIFI_SENSITIVE_PROPS_KEY: "my-random-string"
-  NIFI_CLUSTER_NODE_PROTOCOL_PORT: 8082
-  NIFI_WEB_PROXY_HOST: "nifi0:8443,nifi0,nifi1:8443,nifi1,localhost:8080"
-  SINGLE_USER_CREDENTIALS_USERNAME: *user
-  SINGLE_USER_CREDENTIALS_PASSWORD: *pwd
-  NIFI_SECURITY_USER_AUTHORIZER: "single-user-authorizer"
-  NIFI_SECURITY_USER_LOGIN_IDENTITY_PROVIDER: "single-user-provider"
-  INITIAL_ADMIN_IDENTITY: *user
-  AUTH: "tls"
-  KEYSTORE_TYPE: "JKS"
-  KEYSTORE_PASSWORD: supersecretkeystore
-  TRUSTSTORE_TYPE: "JKS"
-  TRUSTSTORE_PASSWORD: supersecrettruststore
-  # NIFI_WEB_HTTPS_HOST: 0.0.0.0
-  # NIFI_REMOTE_INPUT_HOST: 0.0.0.0
+  environment:
+    &nifi-common-env
+    NIFI_WEB_HTTPS_PORT: 8443
+    NIFI_CLUSTER_IS_NODE: "true"
+    NIFI_ZK_CONNECT_STRING: "zookeeper:2181"
+    NIFI_ELECTION_MAX_WAIT: "30 sec"
+    NIFI_ELECTION_MAX_CANDIDATES: 1
+    NIFI_SENSITIVE_PROPS_KEY: "my-random-string"
+    NIFI_CLUSTER_NODE_PROTOCOL_PORT: 8082
+    NIFI_WEB_PROXY_HOST: "nifi0:8443,nifi0,nifi1:8443,nifi1,localhost:8080"
+    SINGLE_USER_CREDENTIALS_USERNAME: *user
+    SINGLE_USER_CREDENTIALS_PASSWORD: *pwd
+    NIFI_SECURITY_USER_AUTHORIZER: "single-user-authorizer"
+    NIFI_SECURITY_USER_LOGIN_IDENTITY_PROVIDER: "single-user-provider"
+    INITIAL_ADMIN_IDENTITY: *user
+    AUTH: "tls"
+    KEYSTORE_TYPE: "JKS"
+    KEYSTORE_PASSWORD: supersecretkeystore
+    TRUSTSTORE_TYPE: "JKS"
+    TRUSTSTORE_PASSWORD: supersecrettruststore
+    # NIFI_WEB_HTTPS_HOST: 0.0.0.0
+    # NIFI_REMOTE_INPUT_HOST: 0.0.0.0
 
 x-nifi01-environment: &nifi01-environment
   NIFI_CLUSTER_ADDRESS: "nifi01"
@@ -49,7 +50,6 @@ x-nifi02-environment: &nifi02-environment
   NIFI_WEB_HTTPS_HOST: "nifi02"
   KEYSTORE_PATH: "/opt/nifi/certs/keystore.jks"
   TRUSTSTORE_PATH: "/opt/nifi/certs/truststore.jks"
-
 
 services:
   nifi-toolkit:
@@ -71,17 +71,23 @@ services:
       - ./nifi/registry/flow_storage:/opt/nifi-registry/nifi-registry-current/flow_storage
 
   nifi01:
-    <<: *nifi-base
+    <<: *nifi-common
     container_name: nifi01
     restart: on-failure
     depends_on:
       nifi-toolkit:
         condition: service_completed_successfully
     environment:
-      <<: [*nifi-environment, *nifi01-environment]
+      <<: [*nifi-common-env, *nifi01-environment]
     # entrypoint: ["/entrypoint.sh"]
     volumes:
-      - ./nifi/libs:/opt/nifi/nifi-current/libs:ro
+      # - ./nifi/dependencies/hadoop_conf/core-site.xml:/opt/nifi/nifi-current/conf/core-site.xml
+      # - ./nifi/dependencies/hadoop_conf/hdfs-site.xml:/opt/nifi/nifi-current/conf/hdfs-site.xml
+      - ./nifi/dependencies/lib/nifi-hadoop-libraries-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-libraries-nar-2.5.0.nar
+      - ./nifi/dependencies/lib/nifi-hadoop-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-nar-2.5.0.nar
+      - ./nifi/dependencies/lib/postgresql-42.7.7.jar:/opt/nifi/nifi-current/lib/postgresql-42.7.7.jar
+      # - ./nifi/dependencies/lib/hadoop-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-client-3.4.1.jar
+      # - ./nifi/dependencies/lib/hadoop-hdfs-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-hdfs-client-3.4.1.jar
       - nifi_certs_01:/opt/nifi/certs
       - nifi_data_01_conf:/opt/nifi/nifi-current/conf
       - nifi_data_01_extensions:/opt/nifi/nifi-current/extensions
@@ -91,21 +97,25 @@ services:
       - nifi_data_01_provenance_repository:/opt/nifi/nifi-current/provenance_repository
       - nifi_data_01_state:/opt/nifi/nifi-current/state
       - nifi_data_01_logs:/opt/nifi/nifi-current/logs
-    # secrets:
-    #   - nifi_secret
 
   nifi02:
-    <<: *nifi-base
+    <<: *nifi-common
     container_name: nifi02
     restart: on-failure
     depends_on:
       nifi-toolkit:
         condition: service_completed_successfully
     environment:
-      <<: [*nifi-environment, *nifi02-environment]
+      <<: [*nifi-common-env, *nifi02-environment]
     # entrypoint: ["/entrypoint.sh"]
     volumes:
-      - ./nifi/libs:/opt/nifi/nifi-current/libs:ro
+      # - ./nifi/dependencies/hadoop_conf/core-site.xml:/opt/nifi/nifi-current/conf/core-site.xml
+      # - ./nifi/dependencies/hadoop_conf/hdfs-site.xml:/opt/nifi/nifi-current/conf/hdfs-site.xml
+      - ./nifi/dependencies/lib/nifi-hadoop-libraries-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-libraries-nar-2.5.0.nar
+      - ./nifi/dependencies/lib/nifi-hadoop-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-nar-2.5.0.nar
+      - ./nifi/dependencies/lib/postgresql-42.7.7.jar:/opt/nifi/nifi-current/lib/postgresql-42.7.7.jar
+      # - ./nifi/dependencies/lib/hadoop-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-client-3.4.1.jar
+      # - ./nifi/dependencies/lib/hadoop-hdfs-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-hdfs-client-3.4.1.jar
       - nifi_certs_02:/opt/nifi/certs
       - nifi_data_02_conf:/opt/nifi/nifi-current/conf
       - nifi_data_02_extensions:/opt/nifi/nifi-current/extensions
@@ -115,8 +125,6 @@ services:
       - nifi_data_02_provenance_repository:/opt/nifi/nifi-current/provenance_repository
       - nifi_data_02_state:/opt/nifi/nifi-current/state
       - nifi_data_02_logs:/opt/nifi/nifi-current/logs
-    # secrets:
-    #   - nifi_secret
 
 volumes:
   nifi_certs_01:

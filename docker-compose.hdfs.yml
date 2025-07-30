@@ -10,30 +10,47 @@ services:
     <<: *hadoop_base
     container_name: namenode
     hostname: namenode
-    command: ["hdfs", "namenode"]
-    ports:
-      - 9870:9870
+    # ports:
+    #   - 9870:9870
     environment:
       ENSURE_NAMENODE_DIR: "/tmp/hadoop-root/dfs/name"
-    # volumes:
-    #   - ./hadoop/namenode:/opt/hadoop/data/nameNode
-    #   - ./hadoop/config:/opt/hadoop/etc/hadoop
-    #   - ./start-hdfs.sh:/start-hdfs.sh
+    volumes:
+      - hadoop_namenode_conf:/opt/hadoop/etc/hadoop
+      - ./hadoop/start-hdfs.sh:/opt/hadoop/etc/start-hdfs.sh:ro
+    command: [ "/bin/bash", "/opt/hadoop/etc/start-hdfs.sh" ]
 
   datanode:
     <<: *hadoop_base
     container_name: datanode
+    hostname: datanode.local
+    # ports:
+    #   - 9864:9864
     command: ["hdfs", "datanode"]
+    volumes:
+      - hadoop_datanode_conf:/opt/hadoop/etc/hadoop
 
   resourcemanager:
     <<: *hadoop_base
     container_name: resourcemanager
     hostname: resourcemanager
     command: ["yarn", "resourcemanager"]
-    ports:
-        - 8088:8088
 
   nodemanager:
     <<: *hadoop_base
     container_name: nodemanager
     command: ["yarn", "nodemanager"]
+
+volumes:
+  hadoop_namenode_conf:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: hadoop/namenode/conf
+
+  hadoop_datanode_conf:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: hadoop/datanode/conf

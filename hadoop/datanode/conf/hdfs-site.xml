@@ -1,0 +1,7 @@
+<configuration>
+<property><name>dfs.namenode.rpc-address</name><value>namenode:8020</value></property>
+<property><name>dfs.client.use.datanode.hostname</name><value>true</value></property>
+<property><name>dfs.blocksize</name><value>8388608</value></property>
+<property><name>dfs.webhdfs.enabled</name><value>true</value></property>
+<property><name>dfs.replication</name><value>1</value></property>
+</configuration>

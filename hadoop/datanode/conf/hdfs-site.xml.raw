@@ -1,0 +1,5 @@
+dfs.replication: 1
+dfs.namenode.rpc-address: namenode:8020
+dfs.client.use.datanode.hostname: true
+dfs.webhdfs.enabled: true
+dfs.blocksize: 8388608

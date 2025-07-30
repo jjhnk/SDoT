@@ -1,0 +1,152 @@
+{"Transfer-Encoding":"chunked","invokehttp.response.url":"http://openapi.seoul.go.kr:8088/714370656a6c6f7535334652646671/json/IotVdata017/1/100/Dongjak-gu/2025-07-29","invokehttp.tx.id":"1fc0f9fd-8225-4294-bcf0-cd2d51df35be","Server":"Jetty(9.2.19.v20160908)","invokehttp.status.code":"200","mime.type":"application/json;charset=UTF-8","invokehttp.request.duration":"521","result_code_nested":"INFO-000","uuid":"7fd01930-e535-4126-8e9a-6485e64bb38e","Date":"Wed, 30 Jul 2025 02:02:58 GMT","invokehttp.request.url":"http://openapi.seoul.go.kr:8088/714370656a6c6f7535334652646671/json/IotVdata017/1/100/Dongjak-gu/2025-07-29","path":"./","filename":"IotVdata017_Dongjak-gu_2025-07-28_1fc0f9fd-8225-4294-bcf0-cd2d51df35be.json","hadoop.file.url":"hdfs://namenode/user/nifi/IotVdata017_Dongjak-gu_2025-07-28_1fc0f9fd-8225-4294-bcf0-cd2d51df35be.json","retry_count":"0","Content-Encoding":"UTF-8","target.dir.created":"false","invokehttp.status.message":"OK","result_code_root":"","absolute.hdfs.path":"/user/nifi","Content-Type":"application/json;charset=UTF-8","RouteOnAttribute.Route":"isSuccess"}SERIAL_NO,SENSING_TIME,REGION,AUTONOMOUS_DISTRICT,ADMINISTRATIVE_DISTRICT,MAX_TEMP,AVG_TEMP,MIN_TEMP,MAX_HUMI,AVG_HUMI,MIN_HUMI
+V02Q1940278,2025-07-29_23:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,33.1,32.7,32.5,63.0,62.0,61.0
+V02Q1940420,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,33.5,33.3,33.1,61.0,60.0,60.0
+V02Q1940304,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,32.9,32.7,32.5,63.0,62.0,61.0
+V02Q1940319,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.1,33.8,33.4,59.0,59.0,58.0
+V02Q1940296,2025-07-29_23:07:00,industrial_area,Dongjak-gu,Daebang-dong,33.2,33.0,32.7,63.0,62.0,61.0
+V02Q1940190,2025-07-29_23:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.0,31.7,31.2,70.0,69.0,68.0
+V02Q1940834,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,33.5,33.2,33.1,62.0,60.0,59.0
+V02Q1940292,2025-07-29_23:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,33.3,33.0,32.8,63.0,61.0,60.0
+V02Q1940947,2025-07-29_23:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,33.1,32.9,32.8,62.0,61.0,60.0
+V02Q1940301,2025-07-29_23:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,33.5,33.4,33.2,62.0,61.0,60.0
+V02Q1940375,2025-07-29_23:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,32.7,32.7,32.5,65.0,64.0,63.0
+V02Q1940952,2025-07-29_23:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,33.5,33.3,33.1,63.0,61.0,60.0
+V02Q1940420,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,33.5,33.3,33.1,61.0,60.0,60.0
+V02Q1940289,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang3(sam)-dong,32.7,32.6,32.4,65.0,63.0,63.0
+V02Q1940432,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,33.6,33.3,33.1,64.0,62.0,60.0
+V02Q1940278,2025-07-29_23:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,33.1,32.7,32.5,63.0,62.0,61.0
+V02Q1940747,2025-07-29_23:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,33.0,32.8,32.6,61.0,61.0,60.0
+V02Q1940319,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.1,33.8,33.4,59.0,59.0,58.0
+V02Q1940397,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.1,31.5,30.8,69.0,67.0,66.0
+V02Q1940304,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,32.9,32.7,32.5,63.0,62.0,61.0
+V02Q1940382,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,32.1,32.1,31.8,66.0,64.0,63.0
+V02Q1940295,2025-07-29_23:07:00,residential_area,Dongjak-gu,Daebang-dong,32.9,32.6,32.0,65.0,63.0,62.0
+V02Q1940194,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,33.7,33.6,33.5,63.0,61.0,60.0
+V02Q1940297,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang2(i)-dong,31.5,31.3,31.0,75.0,74.0,72.0
+V02Q1940289,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang3(sam)-dong,32.7,32.6,32.4,65.0,63.0,63.0
+OC3CL200118,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,33.4,33.1,32.9,57.0,55.0,54.0
+OC3CL200120,2025-07-29_23:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,33.5,33.3,33.2,60.0,56.0,54.0
+V02Q1940190,2025-07-29_22:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.1,31.9,31.7,71.0,70.0,69.0
+V02Q1940952,2025-07-29_22:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.0,33.8,33.5,64.0,63.0,63.0
+V02Q1940319,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.6,34.1,33.7,62.0,61.0,59.0
+V02Q1940190,2025-07-29_22:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.1,31.9,31.7,71.0,70.0,69.0
+V02Q1940834,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,33.8,33.7,33.5,63.0,63.0,62.0
+V02Q1940296,2025-07-29_22:07:00,industrial_area,Dongjak-gu,Daebang-dong,34.0,33.6,33.2,63.0,62.0,61.0
+V02Q1940292,2025-07-29_22:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,33.9,33.7,33.4,63.0,63.0,63.0
+V02Q1940375,2025-07-29_22:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,33.5,33.1,32.7,66.0,65.0,64.0
+V02Q1940432,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,34.1,33.9,33.7,64.0,61.0,60.0
+V02Q1940952,2025-07-29_22:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.0,33.8,33.5,64.0,63.0,63.0
+V02Q1940319,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.6,34.1,33.7,62.0,61.0,59.0
+V02Q1940420,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,34.2,33.8,33.5,63.0,62.0,61.0
+V02Q1940194,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.2,34.0,33.7,64.0,63.0,63.0
+V02Q1940947,2025-07-29_22:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.0,33.5,33.1,64.0,63.0,62.0
+V02Q1940747,2025-07-29_22:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.0,33.5,33.0,63.0,62.0,61.0
+V02Q1940301,2025-07-29_22:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.1,33.7,33.5,63.0,63.0,62.0
+V02Q1940304,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,33.6,33.2,32.9,64.0,63.0,63.0
+V02Q1940397,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.2,32.0,31.8,70.0,68.0,67.0
+V02Q1940297,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sadang2(i)-dong,31.6,31.5,31.4,75.0,75.0,75.0
+V02Q1940289,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sadang3(sam)-dong,33.1,32.9,32.7,67.0,66.0,65.0
+V02Q1940278,2025-07-29_22:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,33.7,33.4,33.0,63.0,63.0,62.0
+OC3CL200118,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.1,33.8,33.4,57.0,57.0,56.0
+OC3CL200118,2025-07-29_22:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.1,33.8,33.4,57.0,57.0,56.0
+V02Q1940292,2025-07-29_21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,34.7,34.3,33.9,63.0,62.0,61.0
+V02Q1940375,2025-07-29_21:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,33.9,33.7,33.5,65.0,64.0,62.0
+V02Q1940296,2025-07-29_21:07:00,industrial_area,Dongjak-gu,Daebang-dong,34.5,34.3,34.0,63.0,62.0,61.0
+V02Q1940190,2025-07-29_21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.5,32.1,31.9,71.0,71.0,70.0
+V02Q1940420,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,34.8,34.5,34.2,62.0,61.0,59.0
+V02Q1940397,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.4,32.1,31.9,70.0,69.0,68.0
+V02Q1940834,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,34.3,34.0,33.7,63.0,61.0,60.0
+V02Q1940375,2025-07-29_21:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,33.9,33.7,33.5,65.0,64.0,62.0
+V02Q1940296,2025-07-29_21:07:00,industrial_area,Dongjak-gu,Daebang-dong,34.5,34.3,34.0,63.0,62.0,61.0
+V02Q1940947,2025-07-29_21:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.5,34.3,34.0,62.0,62.0,60.0
+V02Q1940319,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.7,34.4,34.1,62.0,61.0,60.0
+V02Q1940304,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,34.2,33.9,33.5,63.0,62.0,61.0
+V02Q1940747,2025-07-29_21:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.4,34.2,33.9,62.0,61.0,60.0
+V02Q1940420,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,34.8,34.5,34.2,62.0,61.0,59.0
+V02Q1940190,2025-07-29_21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.5,32.1,31.9,71.0,71.0,70.0
+V02Q1940301,2025-07-29_21:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.6,34.3,34.1,63.0,62.0,61.0
+V02Q1940292,2025-07-29_21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,34.7,34.3,33.9,63.0,62.0,61.0
+V02Q1940397,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.4,32.1,31.9,70.0,69.0,68.0
+V02Q1940432,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,34.7,34.4,34.1,61.0,60.0,59.0
+V02Q1940952,2025-07-29_21:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.6,34.4,34.0,63.0,62.0,61.0
+V02Q1940278,2025-07-29_21:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,34.3,34.1,33.8,63.0,62.0,61.0
+OC3CL200118,2025-07-29_21:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.6,34.4,34.1,56.0,55.0,52.0
+V02Q1940375,2025-07-29_20:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,34.6,34.2,33.9,62.0,61.0,60.0
+V02Q1940397,2025-07-29_20:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,33.0,32.7,32.4,69.0,68.0,68.0
+V02Q1940834,2025-07-29_20:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,36.0,35.1,34.3,59.0,58.0,56.0
+SERIAL_NO,SENSING_TIME,REGION,AUTONOMOUS_DISTRICT,ADMINISTRATIVE_DISTRICT,MAX_TEMP,AVG_TEMP,MIN_TEMP,MAX_HUMI,AVG_HUMI,MIN_HUMI
+V02Q1940278,2025-07-29 23:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,33.1,32.7,32.5,63.0,62.0,61.0
+V02Q1940420,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,33.5,33.3,33.1,61.0,60.0,60.0
+V02Q1940304,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,32.9,32.7,32.5,63.0,62.0,61.0
+V02Q1940319,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.1,33.8,33.4,59.0,59.0,58.0
+V02Q1940296,2025-07-29 23:07:00,industrial_area,Dongjak-gu,Daebang-dong,33.2,33.0,32.7,63.0,62.0,61.0
+V02Q1940190,2025-07-29 23:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.0,31.7,31.2,70.0,69.0,68.0
+V02Q1940834,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,33.5,33.2,33.1,62.0,60.0,59.0
+V02Q1940292,2025-07-29 23:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,33.3,33.0,32.8,63.0,61.0,60.0
+V02Q1940947,2025-07-29 23:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,33.1,32.9,32.8,62.0,61.0,60.0
+V02Q1940301,2025-07-29 23:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,33.5,33.4,33.2,62.0,61.0,60.0
+V02Q1940375,2025-07-29 23:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,32.7,32.7,32.5,65.0,64.0,63.0
+V02Q1940952,2025-07-29 23:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,33.5,33.3,33.1,63.0,61.0,60.0
+V02Q1940420,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,33.5,33.3,33.1,61.0,60.0,60.0
+V02Q1940289,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang3(sam)-dong,32.7,32.6,32.4,65.0,63.0,63.0
+V02Q1940432,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,33.6,33.3,33.1,64.0,62.0,60.0
+V02Q1940278,2025-07-29 23:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,33.1,32.7,32.5,63.0,62.0,61.0
+V02Q1940747,2025-07-29 23:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,33.0,32.8,32.6,61.0,61.0,60.0
+V02Q1940319,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.1,33.8,33.4,59.0,59.0,58.0
+V02Q1940397,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.1,31.5,30.8,69.0,67.0,66.0
+V02Q1940304,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,32.9,32.7,32.5,63.0,62.0,61.0
+V02Q1940382,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,32.1,32.1,31.8,66.0,64.0,63.0
+V02Q1940295,2025-07-29 23:07:00,residential_area,Dongjak-gu,Daebang-dong,32.9,32.6,32.0,65.0,63.0,62.0
+V02Q1940194,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,33.7,33.6,33.5,63.0,61.0,60.0
+V02Q1940297,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang2(i)-dong,31.5,31.3,31.0,75.0,74.0,72.0
+V02Q1940289,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang3(sam)-dong,32.7,32.6,32.4,65.0,63.0,63.0
+OC3CL200118,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,33.4,33.1,32.9,57.0,55.0,54.0
+OC3CL200120,2025-07-29 23:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,33.5,33.3,33.2,60.0,56.0,54.0
+V02Q1940190,2025-07-29 22:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.1,31.9,31.7,71.0,70.0,69.0
+V02Q1940952,2025-07-29 22:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.0,33.8,33.5,64.0,63.0,63.0
+V02Q1940319,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.6,34.1,33.7,62.0,61.0,59.0
+V02Q1940190,2025-07-29 22:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.1,31.9,31.7,71.0,70.0,69.0
+V02Q1940834,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,33.8,33.7,33.5,63.0,63.0,62.0
+V02Q1940296,2025-07-29 22:07:00,industrial_area,Dongjak-gu,Daebang-dong,34.0,33.6,33.2,63.0,62.0,61.0
+V02Q1940292,2025-07-29 22:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,33.9,33.7,33.4,63.0,63.0,63.0
+V02Q1940375,2025-07-29 22:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,33.5,33.1,32.7,66.0,65.0,64.0
+V02Q1940432,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,34.1,33.9,33.7,64.0,61.0,60.0
+V02Q1940952,2025-07-29 22:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.0,33.8,33.5,64.0,63.0,63.0
+V02Q1940319,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.6,34.1,33.7,62.0,61.0,59.0
+V02Q1940420,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,34.2,33.8,33.5,63.0,62.0,61.0
+V02Q1940194,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.2,34.0,33.7,64.0,63.0,63.0
+V02Q1940947,2025-07-29 22:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.0,33.5,33.1,64.0,63.0,62.0
+V02Q1940747,2025-07-29 22:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.0,33.5,33.0,63.0,62.0,61.0
+V02Q1940301,2025-07-29 22:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.1,33.7,33.5,63.0,63.0,62.0
+V02Q1940304,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,33.6,33.2,32.9,64.0,63.0,63.0
+V02Q1940397,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.2,32.0,31.8,70.0,68.0,67.0
+V02Q1940297,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sadang2(i)-dong,31.6,31.5,31.4,75.0,75.0,75.0
+V02Q1940289,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sadang3(sam)-dong,33.1,32.9,32.7,67.0,66.0,65.0
+V02Q1940278,2025-07-29 22:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,33.7,33.4,33.0,63.0,63.0,62.0
+OC3CL200118,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.1,33.8,33.4,57.0,57.0,56.0
+OC3CL200118,2025-07-29 22:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.1,33.8,33.4,57.0,57.0,56.0
+V02Q1940292,2025-07-29 21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,34.7,34.3,33.9,63.0,62.0,61.0
+V02Q1940375,2025-07-29 21:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,33.9,33.7,33.5,65.0,64.0,62.0
+V02Q1940296,2025-07-29 21:07:00,industrial_area,Dongjak-gu,Daebang-dong,34.5,34.3,34.0,63.0,62.0,61.0
+V02Q1940190,2025-07-29 21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.5,32.1,31.9,71.0,71.0,70.0
+V02Q1940420,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,34.8,34.5,34.2,62.0,61.0,59.0
+V02Q1940397,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.4,32.1,31.9,70.0,69.0,68.0
+V02Q1940834,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,34.3,34.0,33.7,63.0,61.0,60.0
+V02Q1940375,2025-07-29 21:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,33.9,33.7,33.5,65.0,64.0,62.0
+V02Q1940296,2025-07-29 21:07:00,industrial_area,Dongjak-gu,Daebang-dong,34.5,34.3,34.0,63.0,62.0,61.0
+V02Q1940947,2025-07-29 21:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.5,34.3,34.0,62.0,62.0,60.0
+V02Q1940319,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sang-do4(sa)-dong,34.7,34.4,34.1,62.0,61.0,60.0
+V02Q1940304,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sang-do1(il)-dong,34.2,33.9,33.5,63.0,62.0,61.0
+V02Q1940747,2025-07-29 21:07:00,traditional_markets,Dongjak-gu,Sang-do1(il)-dong,34.4,34.2,33.9,62.0,61.0,60.0
+V02Q1940420,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sang-do3(sam)-dong,34.8,34.5,34.2,62.0,61.0,59.0
+V02Q1940190,2025-07-29 21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,32.5,32.1,31.9,71.0,71.0,70.0
+V02Q1940301,2025-07-29 21:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.6,34.3,34.1,63.0,62.0,61.0
+V02Q1940292,2025-07-29 21:07:00,roads_and_parks,Dongjak-gu,Sadang2(i)-dong,34.7,34.3,33.9,63.0,62.0,61.0
+V02Q1940397,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,32.4,32.1,31.9,70.0,69.0,68.0
+V02Q1940432,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sindaebang1(il)-dong,34.7,34.4,34.1,61.0,60.0,59.0
+V02Q1940952,2025-07-29 21:07:00,traditional_markets,Dongjak-gu,Sadang2(i)-dong,34.6,34.4,34.0,63.0,62.0,61.0
+V02Q1940278,2025-07-29 21:07:00,residential_area,Dongjak-gu,Noryangjin1(il)-dong,34.3,34.1,33.8,63.0,62.0,61.0
+OC3CL200118,2025-07-29 21:07:00,residential_area,Dongjak-gu,Sadang1(il)-dong,34.6,34.4,34.1,56.0,55.0,52.0
+V02Q1940375,2025-07-29 20:07:00,commercial_area,Dongjak-gu,Sindaebang2(i)-dong,34.6,34.2,33.9,62.0,61.0,60.0
+V02Q1940397,2025-07-29 20:07:00,residential_area,Dongjak-gu,Sadang5(o)-dong,33.0,32.7,32.4,69.0,68.0,68.0
+V02Q1940834,2025-07-29 20:07:00,residential_area,Dongjak-gu,Sadang4(sa)-dong,36.0,35.1,34.3,59.0,58.0,56.0
