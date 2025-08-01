@@ -347,17 +347,17 @@ bash -c opt/nifi-toolkit/*/bin/tls-toolkit.sh standalone \
     chown -R nifi:nifi /opt/certs
 ```
 
-인증서의 경우 추후 실제 인증 기관에서 인증서를 발급받아 각각의 노드에 발급받을 수 있다.
+인증서의 경우 추후 실제 인증 기관에서 인증서를 발급받아 각각의 노드에 적용시킬 수 있다.
 
 ### HTTP 수집 처리
 
 #### 에러 처리
 
-Server Error(5XX)의 경우는 운영 상황에 따라 중요도가 변경될 수 있으므로 INFO 수준의 메시지를 나타냄
+Server Error(5XX)의 경우는 운영 상황에 따라 중요도가 변경될 수 있으므로 INFO 수준의 메시지를 기록.
 
-Client Error(4XX)의 경우는 심각도가 높다고 판단하여 warn 수준의 로그를 남긴다.
+Client Error(4XX)의 경우는 심각도가 높다고 판단하여 warn 수준의 로그를 기록.
 
- `IotVdata017.RESULT.CODE`가 `INFO-000`이 아닐 경우 유효하지 않은 데이터 상태로 로그를 출력한다.
+ `IotVdata017.RESULT.CODE`가 `INFO-000`이 아닐 경우 유효하지 않은 데이터 상태로 로그를 출력.
 
 > 위의 경우 추후 Mail Server와 연결하여 곧바로 운영단에서 처리할 수 있도록 할 수 있으나, 해당 프로젝트에서는 별도로 추가적인 처리는 하지 않는다.
 > 
