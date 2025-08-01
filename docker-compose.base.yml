@@ -8,14 +8,15 @@ services:
       - shared_net
 
   proxy:
-    image: nginx:latest
+    image: nginx
     container_name: proxy
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
-      - "8080:8080"
-      - "8443:8443"
-      - "9864:9864"
+      - 5432:5432
+      - 8080:8080
+      - 8443:8443
+      - 9864:9864
     networks:
       - shared_net
     depends_on:
@@ -24,10 +25,9 @@ services:
 
   postgres.persistence:
     image: postgres:latest
+    container_name: postgres
     restart: always
     mem_limit: 512m
-    ports:
-      - "5432:5432"
     environment:
       - POSTGRES_DB=sdot_db
       - POSTGRES_USER=${POSTGRES_USR}
