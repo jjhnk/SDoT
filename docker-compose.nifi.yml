@@ -33,9 +33,9 @@ x-nifi-common:
     INITIAL_ADMIN_IDENTITY: *user
     AUTH: "tls"
     KEYSTORE_TYPE: "JKS"
-    KEYSTORE_PASSWORD: supersecretkeystore
+    KEYSTORE_PASSWORD: keystorepassword
     TRUSTSTORE_TYPE: "JKS"
-    TRUSTSTORE_PASSWORD: supersecrettruststore
+    TRUSTSTORE_PASSWORD: truststorepassword
     # NIFI_WEB_HTTPS_HOST: 0.0.0.0
     # NIFI_REMOTE_INPUT_HOST: 0.0.0.0
 
@@ -56,7 +56,7 @@ services:
     <<: *nifi-toolkit-base
     container_name: nifi-toolkit
     user: root
-    entrypoint: ["bash", "-c", "/opt/nifi-toolkit/*/bin/tls-toolkit.sh standalone -O --subjectAlternativeNames 'nifi01,nifi02,localhost' -o /opt/certs -n nifi0[1-2] -P supersecrettruststore -K supersecretkeystore -S supersecretkeystore; chown -R nifi:nifi /opt/certs"]
+    entrypoint: ["bash", "-c", "/opt/nifi-toolkit/*/bin/tls-toolkit.sh standalone -O --subjectAlternativeNames 'nifi01,nifi02,nifi.local' -o /opt/certs -n nifi0[1-2] -P truststorepassword -K keystorepassword -S keystorepassword; chown -R nifi:nifi /opt/certs"]
     volumes:
       - ./nifi/certs:/opt/certs
 
@@ -79,15 +79,10 @@ services:
         condition: service_completed_successfully
     environment:
       <<: [*nifi-common-env, *nifi01-environment]
-    # entrypoint: ["/entrypoint.sh"]
     volumes:
-      # - ./nifi/dependencies/hadoop_conf/core-site.xml:/opt/nifi/nifi-current/conf/core-site.xml
-      # - ./nifi/dependencies/hadoop_conf/hdfs-site.xml:/opt/nifi/nifi-current/conf/hdfs-site.xml
       - ./nifi/dependencies/lib/nifi-hadoop-libraries-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-libraries-nar-2.5.0.nar
       - ./nifi/dependencies/lib/nifi-hadoop-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-nar-2.5.0.nar
       - ./nifi/dependencies/lib/postgresql-42.7.7.jar:/opt/nifi/nifi-current/lib/postgresql-42.7.7.jar
-      # - ./nifi/dependencies/lib/hadoop-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-client-3.4.1.jar
-      # - ./nifi/dependencies/lib/hadoop-hdfs-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-hdfs-client-3.4.1.jar
       - nifi_certs_01:/opt/nifi/certs
       - nifi_data_01_conf:/opt/nifi/nifi-current/conf
       - nifi_data_01_extensions:/opt/nifi/nifi-current/extensions
@@ -107,15 +102,10 @@ services:
         condition: service_completed_successfully
     environment:
       <<: [*nifi-common-env, *nifi02-environment]
-    # entrypoint: ["/entrypoint.sh"]
     volumes:
-      # - ./nifi/dependencies/hadoop_conf/core-site.xml:/opt/nifi/nifi-current/conf/core-site.xml
-      # - ./nifi/dependencies/hadoop_conf/hdfs-site.xml:/opt/nifi/nifi-current/conf/hdfs-site.xml
       - ./nifi/dependencies/lib/nifi-hadoop-libraries-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-libraries-nar-2.5.0.nar
       - ./nifi/dependencies/lib/nifi-hadoop-nar-2.5.0.nar:/opt/nifi/nifi-current/lib/nifi-hadoop-nar-2.5.0.nar
       - ./nifi/dependencies/lib/postgresql-42.7.7.jar:/opt/nifi/nifi-current/lib/postgresql-42.7.7.jar
-      # - ./nifi/dependencies/lib/hadoop-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-client-3.4.1.jar
-      # - ./nifi/dependencies/lib/hadoop-hdfs-client-3.4.1.jar:/opt/nifi/nifi-current/lib/hadoop-hdfs-client-3.4.1.jar
       - nifi_certs_02:/opt/nifi/certs
       - nifi_data_02_conf:/opt/nifi/nifi-current/conf
       - nifi_data_02_extensions:/opt/nifi/nifi-current/extensions
