@@ -458,7 +458,7 @@ Caused by: javax.crypto.AEADBadTagException: Tag mismatch
     ...
 ```
 
-사유는 Cluster 구축을 위해 'NIFI_SENSITIVE_PROPS_KEY: "my-random-string"'를 설정 후 복호화 실패하여 기존의 흐름의 무결성 침해로 추측됨.
+Cluster 구축을 위해 'NIFI_SENSITIVE_PROPS_KEY: "my-random-string"'를 설정한 뒤 기존의 데이터와 key가 달라 복호화 실패하여 데이터 무결성이 침해된 것으로 추측됨.
 
 SSH로 node 접속 후 아래와 같은 명령어를 통해 nifi.sensitive.props.key 변경.
 
@@ -472,7 +472,7 @@ $ ./bin/nifi.sh set-sensitive-properties-key <sensitivePropertiesKey>
 
 Nifi 1.23.0버전부터 HadoopDBCPConnectionPool이 Deprecated 되어 HDFS 연동 프로세스가 기본적으로 제공되지 않음.
 
-이를 해결하기 위해 아래와 같이 nifi-hadoop-libraries-nar 및 nifi-hadoop-nar를 nifi node의 $home/lib에 추가하고, Hadoop의 core-site.xml 및 hdfs-site.xml를 $home/conf에 추가함.
+이를 위해 아래와 같이 nifi-hadoop-libraries-nar 및 nifi-hadoop-nar를 $home/lib에, Hadoop의 core-site.xml 및 hdfs-site.xml를 $home/conf에 추가.
 
 ```yml
 nifi01:
